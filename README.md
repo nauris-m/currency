@@ -3,6 +3,6 @@ currency calculator
 
 * git clone
 * npm i
-* add apikey to "environments/environment.ts"
+* add apikey to "\src\environments\environment.prod.ts"
 * npm run start-prod
 * open http://localhost:4200/
