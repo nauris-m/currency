@@ -11,7 +11,6 @@ export class RatesService {
   }
 
   getRates(): Observable<Rate> {
-    // console.log(environment.production);
     return this.http.get<Rate>(`${environment.apiEndpoint}?app_id=${environment.apiKey}`);
   }
 }

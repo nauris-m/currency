@@ -11,8 +11,5 @@
     <select type="number" [(ngModel)]="toCurrency" (ngModelChange)="calcFromUSD()">
       <option *ngFor="let code of currencyCodes" [ngValue]="code">{{code}}</option>
     </select>
-    <br>
-    <!--<button type="submit" class="btn btn-success" (click)="calculate()">Calculate</button>-->
-    <!--<div>Loading: {{isLoading}}<br>Rates: {{rates | json }}</div>-->
   </div>
 </div>
