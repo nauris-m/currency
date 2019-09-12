@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiEndpoint: 'https://openexchangerates.org/api/latest.json',
+  apiKey: 'apikey'
 };

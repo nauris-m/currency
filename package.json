@@ -2,8 +2,9 @@
   "name": "currency",
   "version": "0.0.0",
   "scripts": {
+    "start-dev": "ng serve --prod=false",
+    "start-prod": "ng serve --prod=true",
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
