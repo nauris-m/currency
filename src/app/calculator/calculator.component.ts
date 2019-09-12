@@ -14,11 +14,9 @@ export class CalculatorComponent implements OnInit {
   fromCurrency: string;
   toCurrency: string;
 
-  selectedItem: any;
-  currencyCodesList: any;
-  result: number;
-
   rates: any;
+  baseRate: string;
+  currencyCodes: Array<string>;
   isLoading: boolean = true;
 
   constructor(private rs: RatesService) {
@@ -27,24 +25,27 @@ export class CalculatorComponent implements OnInit {
   ngOnInit() {
     this.rs.getRates().subscribe(
       data => {
+        this.baseRate = data.base;
         this.rates = data.rates;
-        this.populateDropdown();
+        this.populateList();
       },
       error => console.log(error),
       () => this.isLoading = false
     );
   }
 
-  populateDropdown() {
-    this.currencyCodesList = Object.keys(this.rates);
-    this.fromCurrency = 'USD';
+  populateList() {
+    this.fromCurrency = this.baseRate;
+    this.toCurrency = this.baseRate;
+    this.currencyCodes = Object.keys(this.rates);
   }
 
-  exchange() {
+  /*calculate() {
     this.toAmount = this.fromAmount * this.rates[this.toCurrency];
-  }
+  }*/
 
-  setSelected() {
-    this.selectedItem = this.toCurrency;
+  calcFromUSD() {
+    //this.calculate();
+    this.toAmount = this.fromAmount * this.rates[this.toCurrency];
   }
 }

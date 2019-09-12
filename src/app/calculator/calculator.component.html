@@ -1,27 +1,18 @@
-<div class="card">
-  <div class="card-body">
-    <div class="form-group">
-      <div class="form-group d-flex flex-row">
-
-        <input [(ngModel)]="fromAmount" type="number" name="num1" class="currency-input">
-        <select type="number" [(ngModel)]="fromCurrency" disabled>
-          <option *ngFor="let code of currencyCodesList" [ngValue]="code">{{code}}</option>
-        </select>
-        =
-        <input [(ngModel)]="toAmount" type="number" name="num2" class="currency-input" readonly>
-        <select type="number" [(ngModel)]="toCurrency">
-          <option *ngFor="let code of currencyCodesList" [ngValue]="code">{{code}}</option>
-        </select>
-
-        <br>
-        <button class="btn btn-success" (click)='exchange()'>Exchange!</button>
-        <h6>{{result}}</h6>
-      </div>
-    </div>
-    <!--<div>
-      Loading: {{isLoading}}
-      <br>
-      Rates: {{rates | json }}
-    </div>-->
+<div class="container">
+  <div class="loading" *ngIf="isLoading">loading..</div>
+  <div>
+    <h3>Currency Calculator</h3>
+    <input [(ngModel)]="fromAmount" type="number" name="num1" class="currency-input" (ngModelChange)="calcFromUSD()">
+    <select type="number" [(ngModel)]="fromCurrency" disabled>
+      <option *ngFor="let code of currencyCodes" [ngValue]="code">{{code}}</option>
+    </select>
+    =
+    <input [(ngModel)]="toAmount" type="number" name="num2" class="currency-input" readonly>
+    <select type="number" [(ngModel)]="toCurrency" (ngModelChange)="calcFromUSD()">
+      <option *ngFor="let code of currencyCodes" [ngValue]="code">{{code}}</option>
+    </select>
+    <br>
+    <!--<button type="submit" class="btn btn-success" (click)="calculate()">Calculate</button>-->
+    <!--<div>Loading: {{isLoading}}<br>Rates: {{rates | json }}</div>-->
   </div>
 </div>
