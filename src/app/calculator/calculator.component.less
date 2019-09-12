@@ -30,9 +30,13 @@ div {
   width: 98%;
 }
 
-input:read-only,
-input:-moz-read-only,
-select:disabled,
-input[type="text"]:disabled {
-  background: red;
+input[readonly],
+select[disabled] {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.arrow {
+  text-align: center;
+  font-weight: bold;
 }

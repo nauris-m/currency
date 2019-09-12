@@ -4,5 +4,5 @@ currency calculator
 * git clone
 * npm i
 * add apikey to "environments/environment.ts"
-* ng serve
+* npm run start-prod
 * open http://localhost:4200/

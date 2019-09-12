@@ -40,12 +40,7 @@ export class CalculatorComponent implements OnInit {
     this.currencyCodes = Object.keys(this.rates);
   }
 
-  /*calculate() {
-    this.toAmount = this.fromAmount * this.rates[this.toCurrency];
-  }*/
-
   calcFromUSD() {
-    //this.calculate();
     this.toAmount = this.fromAmount * this.rates[this.toCurrency];
   }
 }
