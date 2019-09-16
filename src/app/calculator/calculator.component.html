@@ -6,9 +6,9 @@
     <select type="number" [(ngModel)]="fromCurrency" disabled>
       <option *ngFor="let code of currencyCodes" [ngValue]="code">{{code}}</option>
     </select>
-    <div class="arrow">&darr;</div>
-    <input [(ngModel)]="toAmount" type="number" name="num2" class="currency-input" readonly>
-    <select type="number" [(ngModel)]="toCurrency" (ngModelChange)="calcFromUSD()">
+    <div class="arrow">=</div>
+    <input [(ngModel)]="toAmount" type="number" name="num2" class="currency-input" (ngModelChange)="calcToUSD()">
+    <select type="number" [(ngModel)]="toCurrency" (ngModelChange)="calcToUSD()">
       <option *ngFor="let code of currencyCodes" [ngValue]="code">{{code}}</option>
     </select>
   </div>

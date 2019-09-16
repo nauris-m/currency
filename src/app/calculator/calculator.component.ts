@@ -43,4 +43,8 @@ export class CalculatorComponent implements OnInit {
   calcFromUSD() {
     this.toAmount = this.fromAmount * this.rates[this.toCurrency];
   }
+
+  calcToUSD() {
+    this.fromAmount = this.toAmount / this.rates[this.toCurrency];
+  }
 }
