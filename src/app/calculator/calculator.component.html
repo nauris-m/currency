@@ -1,15 +1,50 @@
-<div class="container">
-  <div class="loading" *ngIf="isLoading">loading..</div>
-  <div>
-    <h3>Currency Calculator</h3>
-    <input [(ngModel)]="fromAmount" type="number" name="num1" class="currency-input" (ngModelChange)="calcFromUSD()">
-    <select type="number" [(ngModel)]="fromCurrency" disabled>
-      <option *ngFor="let code of currencyCodes" [ngValue]="code">{{code}}</option>
-    </select>
-    <div class="arrow">=</div>
-    <input [(ngModel)]="toAmount" type="number" name="num2" class="currency-input" (ngModelChange)="calcToUSD()">
-    <select type="number" [(ngModel)]="toCurrency" (ngModelChange)="calcToUSD()">
-      <option *ngFor="let code of currencyCodes" [ngValue]="code">{{code}}</option>
-    </select>
+<app-loading [condition]="isLoading"></app-loading>
+
+<p-panel header="Currency Calculator" [style]="{width: '100%'}" *ngIf="!isLoading">
+  <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0;">
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-3">
+        Amount:
+      </div>
+      <div class="ui-grid-col-9">
+        <input pInputText [(ngModel)]="fromAmount" type="number" name="num1" class="currency-input" (ngModelChange)="calcFromUSD()">
+      </div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-3">
+        Currency:
+      </div>
+      <div class="ui-grid-col-9">
+        <p-dropdown [options]="currenciesFrom" [(ngModel)]="selectedFrom" (onChange)="calcFromUSD()" [disabled]="true"></p-dropdown>
+      </div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-3">
+      </div>
+      <div class="ui-grid-col-9">
+        <i class="pi pi-arrow-down"></i>
+      </div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-3">
+        Amount:
+      </div>
+      <div class="ui-grid-col-9">
+        <input pInputText [(ngModel)]="toAmount" type="number" name="num2" class="currency-input" (ngModelChange)="calcToUSD()">
+      </div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-3">
+        Currency:
+      </div>
+      <div class="ui-grid-col-9">
+        <p-dropdown [options]="currenciesTo" [(ngModel)]="selectedTo" (onChange)="calcToUSD()"></p-dropdown>
+      </div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-12">
+        <span class="source-text">Source: openexchangerates.org</span>
+      </div>
+    </div>
   </div>
-</div>
+</p-panel>
