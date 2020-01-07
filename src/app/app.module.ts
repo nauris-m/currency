@@ -9,12 +9,16 @@ import {CardModule} from "primeng/card";
 import {DropdownModule, InputTextModule, PanelModule} from "primeng/primeng";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LoadingComponent} from "./loading/loading.component";
+import { ZippyComponent } from './zippy/zippy.component';
+import { CustomInputComponent } from './custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
-    LoadingComponent
+    LoadingComponent,
+    ZippyComponent,
+    CustomInputComponent
   ],
   imports: [
     BrowserModule,

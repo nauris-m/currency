@@ -33,7 +33,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.rs.getRates().subscribe(
+    /*this.rs.getRates().subscribe(
       data => {
         this.baseRate = data.base;
         this.rates = data.rates;
@@ -41,7 +41,8 @@ export class CalculatorComponent implements OnInit {
       },
       error => console.log(error),
       () => this.isLoading = false
-    );
+    );*/
+    this.isLoading = false;
   }
 
   populateDropdowns() {
@@ -66,4 +67,13 @@ export class CalculatorComponent implements OnInit {
   calcToUSD() {
     this.fromAmount = this.toAmount / this.rates[this.selectedTo.code];
   }
+
+  onOpen(e) {
+    console.log('onopen b', e);
+  }
+
+  onClose(e) {
+    console.log('onclose a', e);
+  }
+
 }
