@@ -11,6 +11,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LoadingComponent} from "./loading/loading.component";
 import { ZippyComponent } from './zippy/zippy.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
+import { ParentoComponent } from './parento/parento.component';
+import { KidoComponent } from './kido/kido.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CustomInputComponent } from './custom-input/custom-input.component';
     CalculatorComponent,
     LoadingComponent,
     ZippyComponent,
-    CustomInputComponent
+    CustomInputComponent,
+    ParentoComponent,
+    KidoComponent
   ],
   imports: [
     BrowserModule,
