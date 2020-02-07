@@ -21,6 +21,7 @@ export class CalculatorComponent implements OnInit {
 
   rates: any;
   baseRate: string;
+
   currencyCodes: Array<string>;
   isLoading: boolean = true;
 
